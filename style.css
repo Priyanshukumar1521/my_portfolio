@@ -284,17 +284,9 @@ section{
 .education .timeline-items{
     max-width: 75rem;
     margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
 }
 .education .timeline-items::before{
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 100px;
-    background-color: var(--main-color);
-    left: calc(50% - 1px);
+    display: none;
 }
 .education .timeline-items .timeline-item{
     margin-bottom: 4rem;
@@ -305,13 +297,13 @@ section{
     margin-bottom: 0;
 }
 .education .timeline-items .timeline-item:nth-child(odd){
-    padding-right: calc(50% +30px);
-    text-align: right;
+   margin-right: auto;
+   width: 45%;
 }
 
 .education .timeline-items .timeline-item:nth-child(even){
-    padding-left: calc(50% + 30px);
-    text-align: right;
+    margin-left: auto;
+    width: 45%;
 }
 .education .timeline-items .timeline-item .timeline-item-dot{
     position: absolute;
@@ -329,10 +321,10 @@ section{
 }
 .education .timeline-items .timeline-item .timeline-content{
     padding: 1rem;
-    width: 35rem;
     border: 2rem solid var(--main-color);
     border-radius: 3rem;
     transition: .5s ease-in-out;
+    background-color: var(--second-bg-color);
 }
 
 .education .timeline-items .timeline-item .timeline-content:hover{
@@ -610,17 +602,17 @@ section{
     .home{
         flex-flow: column-reverse;
         padding: 8rem;
-         padding-top: 15rem;
+        padding-top: 15rem;
+    }
+    .home img{
+        height: 35rem;
+        width: 35rem;
     }
 }
 
 @media(max-width:700px){
-       html{
-            font-size: 50.5%;
-}
-    .home img{
-        height: 35rem;
-        width: 35rem;
+    html{
+        font-size: 50.5%;
     }
     .home{
         padding: 8rem 0;
@@ -639,9 +631,6 @@ section{
     .menu i{
         display: flex;
     }
-    .header .navbar .active{
-        display: grid;
-    }
     .header .navbar{
         position: absolute;
         top: 7rem;
@@ -653,9 +642,8 @@ section{
         padding: 1rem;
         gap: 2rem;
     }
-    .header .navbar a#Home{
-        color: var(--text-color);
-        text-decoration: none;
+    .header .navbar .active{
+        display: grid;
     }
     .header .navbar a{
         width: 100%;
@@ -664,20 +652,13 @@ section{
     .header .navbar a:hover,
     .header .navbar a#Home:hover{
         background-color: var(--second-bg-color);
-        color: var(--main-color);
+        color: var(--text-color);
         text-decoration: none;
-    }
-
-}    
-@media(max-width: 450px){
-
-    .home .content p{
-        width: 35rem;
     }
     .education .timeline-items{
         display: grid;
     }
-    .contact .form form{
+    .contact .form form {
         display: grid;
     }
     .contact .form form .inputs,
@@ -687,6 +668,16 @@ section{
     .contact .form form .inputs .input,
     .contact .form form .text textarea{
         width: 100%;
+    }
+}    
+@media(max-width: 450px){
+
+    .home .content p{
+        width: 35rem;
+    }
+    .home img{
+        height: 25rem;
+        width: 25rem;
     }
     .contact{
         padding: 1rem 0;
